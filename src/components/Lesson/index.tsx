@@ -20,14 +20,9 @@ export function Lesson(props: LessonProps) {
   )
 
   const isActiveLesson = slug === props.slug
-  return (
-    <Link
-      reloadDocument
-      to={`/event/lesson/${props.slug}`}
-      role="button"
-      aria-disabled="true"
-      className="group"
-    >
+
+  return isLessonAvailable ? (
+    <Link reloadDocument to={`/event/lesson/${props.slug}`} className="group">
       <span className="text-gray-300">{availableDateFormatted}</span>
 
       <div
@@ -77,5 +72,56 @@ export function Lesson(props: LessonProps) {
         </strong>
       </div>
     </Link>
+  ) : (
+    <button className="group opacity-70" disabled>
+      <span className="text-gray-300 -ml-16">{availableDateFormatted}</span>
+
+      <div
+        className={`rounded border border-orange-500 p-2 mt-2  ${
+          isActiveLesson ? 'bg-green-500' : ''
+        }`}
+      >
+        <header className="flex items-center justify-between">
+          {isLessonAvailable ? (
+            <>
+              <span
+                className={`text-sm ${
+                  isActiveLesson ? 'text-white' : 'text-blue-500'
+                } font-medium flex items-center gap-2`}
+              >
+                <CheckCircle size={20} />
+                conteudo liberado
+              </span>
+              <span
+                className={`text-xs rounded py-[0.125rem] px-2 ${
+                  isActiveLesson ? 'text-white' : 'text-green-300'
+                } border ${
+                  isActiveLesson ? 'border-white' : 'border-green-300'
+                } font-bold hover:text-white hover:bg-green-300`}
+              >
+                {props.type === 'live' ? 'AO VIVO' : 'AULA PRÁTICA'}
+              </span>
+            </>
+          ) : (
+            <>
+              <span className="text-sm text-orange-500 font-medium flex items-center gap-2  ">
+                <Lock size={20} />
+                Em breve
+              </span>
+              <span className="text-xs rounded py-[0.125rem] px-2 text-orange-500 border border-orange-500 font-bold hover:text-white hover:bg-orange-500 ">
+                {props.type === 'live' ? 'AO VIVO' : 'AULA PRÁTICA'}
+              </span>
+            </>
+          )}
+        </header>
+        <strong
+          className={`${
+            isActiveLesson ? 'text-white' : 'text-gray-200'
+          } mt-5 block`}
+        >
+          {props.title}
+        </strong>
+      </div>
+    </button>
   )
 }
