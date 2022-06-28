@@ -2,7 +2,7 @@ import { useState, FormEvent } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { Logo } from '../components/Logo'
 import { useCreateSubscriberMutation } from '../graphql/generated'
-
+import imgUrl from '/src/assets/bg-2.png'
 export function Subscribe() {
   const navigate = useNavigate()
   const [email, setEmail] = useState('')
@@ -76,7 +76,7 @@ export function Subscribe() {
       </div>
 
       <img
-        src="/src/assets/bg-2.png"
+        src={imgUrl}
         className="mt-10"
         alt="IDE de programação Visual Studio Code Aberta em um codigo react ao centro, icone do react framework acima, um painel contendo icones de checked, camera, smartphone, monitor lcd e um icone de flash da camera"
       />
