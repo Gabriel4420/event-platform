@@ -75,6 +75,9 @@ $ yarn dev
 
 Este projeto está sob licença MIT. Veja o arquivo [LICENSE](LICENSE.md) para mais detalhes.
 
+<a href="#top">Voltar para o topo</a>
+
+&#xa0;
 
 <h4 align="center">
   Feito com ❤️ por Gabriel Rodrigues 👋️ <a href="mailto:gabriel_rodrigues_perez@hotmail.com">Entre em contato!</a>
@@ -95,6 +98,4 @@ Este projeto está sob licença MIT. Veja o arquivo [LICENSE](LICENSE.md) para m
   
 </p>
 
-&#xa0;
 
-<a href="#top">Voltar para o topo</a>
