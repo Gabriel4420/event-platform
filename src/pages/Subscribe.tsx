@@ -7,20 +7,27 @@ export function Subscribe() {
   const navigate = useNavigate()
   const [email, setEmail] = useState('')
   const [name, setName] = useState('')
+  const [isCreated,setIsCreated] = useState(false)
 
   const [createSubscriber, { loading }] = useCreateSubscriberMutation()
 
   async function handleSubscribe(event: FormEvent) {
     event.preventDefault()
 
-    await createSubscriber({
-      variables: {
-        name,
-        email,
-      },
-    })
+    if(isCreated){
+      await createSubscriber({
+        variables: {
+          name,
+          email,
+        },
+      })
+  
+      navigate('/event')
+    } else{
+      navigate('/event')
+    }
 
-    navigate('/event')
+    
   }
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 to-green-500 flex flex-col items-center">

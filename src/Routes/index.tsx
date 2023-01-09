@@ -1,6 +1,5 @@
 import { Route, Routes } from 'react-router-dom'
-import { Event } from '../pages/Event'
-import { Subscribe } from '../pages/Subscribe'
+import { Event, Subscribe } from '../pages'
 
 export function Routers() {
   return (

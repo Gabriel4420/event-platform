@@ -1,6 +1,4 @@
-import { Header } from '../components/Header'
-import { Sidebar } from '../components/Sidebar'
-import { Video } from '../components/Video'
+import { Header, Video, Sidebar } from '../components'
 import { useParams } from 'react-router-dom'
 
 export function Event() {
